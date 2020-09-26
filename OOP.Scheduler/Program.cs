@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Text;
 using log4net;
 using Quartz;
@@ -20,14 +21,14 @@ namespace OOP.Scheduler
                 {
                     scheduler.Start(hour, minute);
                     Logger.Log.Info("Bắt đầu.");
-                    Console.WriteLine("Bắt đầu.");
+                    Debug.WriteLine("Bắt đầu.");
                 }
             }
             else
             {
                 scheduler.Stop();
                 Logger.Log.Info("Kết thúc.");
-                Console.WriteLine("Kết thúc.");
+                Debug.WriteLine("Kết thúc.");
             }
         }
     }
@@ -39,8 +40,8 @@ namespace OOP.Scheduler
             try
             {
                 Logger.Log.Info("Thực hiện Job và kết thúc");
-                Console.WriteLine("Thực hiện Job và kết thúc");
-                System.Environment.Exit(0);
+                Debug.WriteLine("Thực hiện Job và kết thúc");
+                Environment.Exit(0);
             }
             catch (Exception ex)
             {
